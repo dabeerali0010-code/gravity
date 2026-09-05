@@ -41,16 +41,13 @@ a { text-decoration: none; color: inherit; }
     display: flex; align-items: center; justify-content: space-between;
     height: 70px;
 }
-.nav-logo { display: flex; align-items: center; gap: 8px; }
-.logo-icon {
-    width: 36px; height: 36px; border-radius: 50%;
-    background: var(--green-bright); color: #000;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 18px;
+.nav-logo { display: flex; align-items: center; line-height: 0; }
+.nav-logo-img {
+    height: 38px; width: auto; display: block;
 }
-.logo-text { font-family: 'Bebas Neue', cursive; font-size: 24px; color: var(--green); letter-spacing: 3px; }
-.logo-sub { font-size: 11px; color: var(--text-secondary); letter-spacing: 1px; display: none; }
-@media(min-width:600px) { .logo-sub { display: inline; } }
+@media (max-width: 600px) {
+    .nav-logo-img { height: 32px; }
+}
 .nav-links {
     display: flex; align-items: center; gap: 32px; list-style: none;
 }
@@ -515,11 +512,8 @@ a { text-decoration: none; color: inherit; }
     display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
     margin-bottom: 40px;
 }
-.footer-logo {
-    display: flex; align-items: center; gap: 10px;
-    font-family: 'Bebas Neue', cursive; font-size: 1.5rem;
-    color: var(--green); letter-spacing: 2px; margin-bottom: 12px;
-}
+.footer-logo { margin-bottom: 14px; line-height: 0; }
+.footer-logo-img { height: 46px; width: auto; display: block; }
 .footer-tagline {
     font-size: 0.85rem; color: var(--green); letter-spacing: 2px;
     text-transform: uppercase; margin-bottom: 12px;
