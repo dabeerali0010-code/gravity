@@ -524,15 +524,23 @@ a { text-decoration: none; color: inherit; }
     text-transform: uppercase; margin-bottom: 12px;
 }
 .footer-desc { color: var(--text-secondary); font-size: 0.9rem; }
+.footer-links { display: flex; flex-wrap: wrap; column-gap: 10px; row-gap: 10px; }
 .footer-links h4 {
-    font-size: 1rem; color: var(--text-primary); margin-bottom: 16px;
+    flex-basis: 100%; font-size: 1rem; color: var(--text-primary);
     letter-spacing: 2px;
 }
 .footer-links a {
-    display: block; color: var(--text-secondary); font-size: 0.9rem;
-    margin-bottom: 10px; transition: color 0.3s;
+    display: inline-block; color: var(--text-secondary); font-size: 0.75rem;
+    font-weight: 500; letter-spacing: 1px; text-transform: uppercase;
+    position: relative; padding-bottom: 4px; transition: color 0.3s;
+}
+.footer-links a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 0; height: 2px; background: var(--primary);
+    transition: width 0.3s ease;
 }
 .footer-links a:hover { color: var(--primary); }
+.footer-links a:hover::after { width: 100%; }
 .footer-bottom {
     border-top: 1px solid var(--border-light); padding-top: 24px;
     text-align: center;
