@@ -511,7 +511,7 @@ a { text-decoration: none; color: inherit; }
     background: var(--bg-light);
 }
 .footer-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
+    display: grid; grid-template-columns: 2fr 1fr; gap: 40px;
     margin-bottom: 40px;
 }
 .footer-logo {
@@ -524,7 +524,7 @@ a { text-decoration: none; color: inherit; }
     text-transform: uppercase; margin-bottom: 12px;
 }
 .footer-desc { color: var(--text-secondary); font-size: 0.9rem; }
-.footer-links h4, .footer-contact h4 {
+.footer-links h4 {
     font-size: 1rem; color: var(--text-primary); margin-bottom: 16px;
     letter-spacing: 2px;
 }
@@ -533,11 +533,6 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 10px; transition: color 0.3s;
 }
 .footer-links a:hover { color: var(--primary); }
-.footer-contact p {
-    color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 8px;
-}
-.footer-contact a { color: var(--primary); transition: opacity 0.3s; }
-.footer-contact a:hover { opacity: 0.8; }
 .footer-bottom {
     border-top: 1px solid var(--border-light); padding-top: 24px;
     text-align: center;
