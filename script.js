@@ -123,17 +123,6 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
-/* === CONTACT FORM === */
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const success = document.getElementById('formSuccess');
-    success.classList.add('show');
-    setTimeout(() => {
-        success.classList.remove('show');
-        e.target.reset();
-    }, 4000);
-});
-
 /* === INIT === */
 renderLocations('all');
 
