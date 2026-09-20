@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Gravity Media Services — Before / After Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f5;
+    --panel:#ffffff;
+    --line:#e4e7e1;
+    --line-strong:#d3d8cd;
+    --ink:#12160f;
+    --ink-soft:#5d6555;
+    --brand:#7FB900;
+    --brand-ink:#3f5c00;
+    --radius:8px;
+    --bar-h:64px;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  /* ---------- toolbar ---------- */
+  .bar{
+    flex:0 0 auto;
+    background:var(--panel);
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:0 14px;
+    min-height:var(--bar-h);
+    flex-wrap:wrap;
+    position:relative;
+    z-index:5;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .brand span.dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--brand);
+    display:inline-block;
+    box-shadow:0 0 0 3px rgba(127,185,0,.16);
+  }
+  .brand small{
+    display:block;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    font-weight:500;
+    color:var(--ink-soft);
+  }
+
+  .spacer{flex:1 1 auto;}
+
+  /* segmented switch */
+  .switch{
+    position:relative;
+    display:flex;
+    background:#f1f3ee;
+    border:1px solid var(--line-strong);
+    border-radius:999px;
+    padding:4px;
+    gap:2px;
+  }
+  .switch .thumb{
+    position:absolute;
+    top:4px;bottom:4px;
+    border-radius:999px;
+    background:var(--ink);
+    transition:left .28s cubic-bezier(.2,.7,.2,1), width .28s cubic-bezier(.2,.7,.2,1), background .28s;
+    z-index:0;
+  }
+  .switch[data-view="before"] .thumb{background:#6b7360;}
+  .switch[data-view="now"] .thumb{background:var(--brand);}
+  .switch button{
+    position:relative;
+    z-index:1;
+    appearance:none;
+    border:0;
+    background:transparent;
+    font:inherit;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.02em;
+    color:var(--ink-soft);
+    padding:8px 20px;
+    border-radius:999px;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:color .22s;
+  }
+  .switch button[aria-selected="true"]{color:#fff;}
+  .switch button:focus-visible{outline:2px solid var(--brand-ink);outline-offset:2px;}
+
+  /* device switch */
+  .devices{
+    display:flex;
+    border:1px solid var(--line-strong);
+    border-radius:999px;
+    overflow:hidden;
+    background:#fff;
+  }
+  .devices button{
+    appearance:none;border:0;background:transparent;font:inherit;
+    font-size:12px;font-weight:500;color:var(--ink-soft);
+    padding:7px 14px;cursor:pointer;transition:background .18s,color .18s;
+  }
+  .devices button + button{border-left:1px solid var(--line);}
+  .devices button[aria-pressed="true"]{background:var(--ink);color:#fff;}
+
+  .openlink{
+    font-size:12px;font-weight:600;color:var(--brand-ink);
+    text-decoration:none;border:1px solid var(--line-strong);
+    background:#fff;border-radius:999px;padding:8px 15px;white-space:nowrap;
+    transition:border-color .18s,background .18s;
+  }
+  .openlink:hover{border-color:var(--brand);background:#f4f9e9;}
+
+  /* ---------- caption ---------- */
+  .caption{
+    flex:0 0 auto;
+    display:flex;align-items:center;gap:10px;
+    padding:9px 16px;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    background:#fbfcfa;
+    border-bottom:1px solid var(--line);
+  }
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    padding:3px 10px;border-radius:999px;
+    border:1px solid var(--line-strong);
+    background:#fff;color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .pill.live{border-color:#e0c8c8;background:#fdf4f4;color:#8d3b3b;}
+  .pill.new{border-color:#c9e2a2;background:#f4f9e9;color:var(--brand-ink);}
+  .caption .txt{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .hint{font-size:11.5px;color:#8b9384;white-space:nowrap;}
+
+  /* ---------- stage ---------- */
+  .stage{
+    flex:1 1 auto;
+    padding:14px;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    min-height:0;
+  }
+  .frame{
+    width:100%;
+    height:100%;
+    background:#fff;
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    overflow:hidden;
+    position:relative;
+    transition:width .3s cubic-bezier(.2,.7,.2,1), border-radius .3s;
+    box-shadow:0 1px 2px rgba(18,22,15,.04);
+  }
+  .stage.mobile .frame{
+    width:390px;
+    max-width:100%;
+    border-radius:22px;
+    border-width:5px;
+    border-color:#12160f;
+    box-shadow:0 10px 30px rgba(18,22,15,.13);
+  }
+  .frame iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+    background:#fff;
+  }
+  .frame .loading{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;
+    font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em;
+    transition:opacity .35s;
+  }
+  .frame.ready .loading{opacity:0;pointer-events:none;}
+
+  .keys{
+    flex:0 0 auto;
+    text-align:center;
+    font-size:11px;
+    color:#8b9384;
+    padding:0 0 8px;
+  }
+  kbd{
+    font:inherit;font-size:10.5px;
+    border:1px solid var(--line-strong);
+    border-bottom-width:2px;
+    border-radius:4px;
+    padding:1px 5px;
+    background:#fff;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:760px){
+    :root{--bar-h:auto;}
+    .bar{gap:10px;padding:10px 12px;}
+    .brand{width:100%;}
+    .spacer{display:none;}
+    .switch{flex:1 1 auto;justify-content:space-between;}
+    .switch button{padding:8px 12px;flex:1 1 0;}
+    .devices{display:none;}
+    .caption{flex-wrap:wrap;gap:7px;padding:9px 12px;}
+    .caption .txt{white-space:normal;overflow:visible;width:100%;font-size:12px;}
+    .hint,.keys{display:none;}
+    .stage{padding:10px;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="bar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Gravity<small>Redesign preview</small></span>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="switch" id="switch" data-view="now" role="tablist" aria-label="Choose version">
+      <span class="thumb" id="thumb"></span>
+      <button type="button" role="tab" data-view="before" aria-selected="false">Before</button>
+      <button type="button" role="tab" data-view="now" aria-selected="true">Now</button>
+    </div>
+
+    <div class="devices" role="group" aria-label="Viewport width">
+      <button type="button" data-dev="desktop" aria-pressed="true">Desktop</button>
+      <button type="button" data-dev="mobile" aria-pressed="false">Mobile</button>
+    </div>
+
+    <a class="openlink" id="openlink" href="index.html" target="_blank" rel="noopener">Open full page ↗</a>
+  </header>
+
+  <div class="caption">
+    <span class="pill" id="pill">Now</span>
+    <span class="txt" id="captionText">The redesigned site — editorial hero, city bento grid, filterable location cards, smooth scroll motion.</span>
+    <span class="hint">Use ← → to flip</span>
+  </div>
+
+  <main class="stage" id="stage">
+    <div class="frame" id="frame">
+      <iframe id="view" src="index.html" title="Gravity website preview" loading="eager"></iframe>
+      <div class="loading" id="loading">Loading…</div>
+    </div>
+  </main>
+
+  <div class="keys">
+    <kbd>←</kbd> before &nbsp;·&nbsp; <kbd>→</kbd> now &nbsp;·&nbsp; switch also works on a phone
+  </div>
+
+<script>
+(function () {
+  var VIEWS = {
+    before: {
+      src: 'before/index.html',
+      label: 'Before',
+      pill: 'Live site until now',
+      pillClass: 'live',
+      text: 'The original Gravity site as it stood before the redesign.'
+    },
+    now: {
+      src: 'index.html',
+      label: 'Now',
+      pill: 'Now',
+      pillClass: 'new',
+      text: 'The redesigned site — editorial hero, city bento grid, filterable location cards, smooth scroll motion.'
+    }
+  };
+
+  var switchEl = document.getElementById('switch');
+  var thumb    = document.getElementById('thumb');
+  var stage    = document.getElementById('stage');
+  var frame    = document.getElementById('frame');
+  var view     = document.getElementById('view');
+  var loading  = document.getElementById('loading');
+  var pill     = document.getElementById('pill');
+  var capText  = document.getElementById('captionText');
+  var openLink = document.getElementById('openlink');
+  var buttons  = switchEl.querySelectorAll('button');
+
+  var current = (location.hash.replace('#','') === 'before') ? 'before' : 'now';
+
+  function moveThumb() {
+    var active = switchEl.querySelector('button[aria-selected="true"]');
+    if (!active) return;
+    thumb.style.left  = active.offsetLeft + 'px';
+    thumb.style.width = active.offsetWidth + 'px';
+  }
+
+  function render(which, push) {
+    var cfg = VIEWS[which];
+    current = which;
+
+    switchEl.setAttribute('data-view', which);
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-selected', b.getAttribute('data-view') === which ? 'true' : 'false');
+    });
+    moveThumb();
+
+    pill.textContent = cfg.pill;
+    pill.className = 'pill ' + cfg.pillClass;
+    capText.textContent = cfg.text;
+    openLink.href = cfg.src;
+
+    if (view.getAttribute('src') !== cfg.src) {
+      frame.classList.remove('ready');
+      view.setAttribute('src', cfg.src);
+    } else {
+      frame.classList.add('ready');
+    }
+
+    if (push !== false && history.replaceState) {
+      history.replaceState(null, '', '#' + which);
+    }
+  }
+
+  view.addEventListener('load', function () {
+    frame.classList.add('ready');
+  });
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      render(b.getAttribute('data-view'));
+    });
+  });
+
+  // device width
+  stage.parentNode.querySelectorAll('.devices button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var dev = b.getAttribute('data-dev');
+      stage.classList.toggle('mobile', dev === 'mobile');
+      stage.parentNode.querySelectorAll('.devices button').forEach(function (o) {
+        o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+      });
+    });
+  });
+
+  // keyboard
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  render('before');
+    if (e.key === 'ArrowRight') render('now');
+  });
+
+  window.addEventListener('resize', moveThumb);
+  window.addEventListener('load', moveThumb);
+  setTimeout(moveThumb, 120);
+
+  render(current, false);
+})();
+</script>
+</body>
+</html>
