@@ -1,327 +1,418 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravity Media Services | OOH Advertising Across Pakistan</title>
     <meta name="description" content="Gravity Media Services — Spreading Ideas Through Screens. Premier out-of-home advertising across 6 cities in Pakistan with 146+ billboard faces.">
+    <meta name="theme-color" content="#7FB900">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gravity Media Services | OOH Advertising Across Pakistan">
+    <meta property="og:description" content="Billboards, pole signs, digital faces and fabrication across 6 cities in Pakistan. 146+ ad faces.">
+    <meta property="og:image" content="images/hyd-autobhan-rooftop.jpg">
+    <link rel="icon" href="images/logo-crop.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="navbar" id="navbar">
-    <div class="nav-container">
-        <a href="#" class="nav-logo">
+<!-- ============ NAV ============ -->
+<header class="nav" id="navbar">
+    <div class="nav-inner">
+        <a href="#hero" class="brand" aria-label="Gravity Media Services — home">
             <img src="images/logo-crop.png" alt="Gravity Media Services">
         </a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#cities">Cities</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#clients">Clients</a></li>
-            <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+
+        <nav class="nav-links" id="navLinks" aria-label="Primary">
+            <a href="#cities">Cities</a>
+            <a href="#locations">Locations</a>
+            <a href="#about">About</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact" class="btn btn-primary btn-nav">Get a Quote</a>
+        </nav>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
     </div>
-</nav>
+    <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
+</header>
 
-<!-- HERO -->
+<!-- ============ HERO ============ -->
 <section class="hero" id="hero">
-    <div class="hero-grid"></div>
-    <div class="billboard-frame">
-        <div class="billboard-light bl-1"></div>
-        <div class="billboard-light bl-2"></div>
-        <div class="billboard-light bl-3"></div>
-        <div class="billboard-light bl-4"></div>
-        <div class="billboard-light bl-5"></div>
-        <div class="billboard-light bl-6"></div>
-        <div class="billboard-light bl-7"></div>
-        <div class="billboard-light bl-8"></div>
-        <div class="billboard-inner">
-            <h1 class="hero-title reveal-text">SPREADING IDEAS<br>THROUGH <span class="text-glow">SCREENS</span></h1>
-            <p class="hero-sub">Premier Out-of-Home Advertising Across Pakistan</p>
-            <a href="#locations" class="hero-btn">Explore Locations</a>
+    <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-glow"></div>
+    </div>
+
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <span class="eyebrow"><span class="eyebrow-dot"></span>Out-of-home advertising &middot; Sindh, Pakistan</span>
+
+            <h1 class="hero-title">
+                <span class="hero-line">Spreading ideas</span>
+                <span class="hero-line">through <em>screens</em></span>
+            </h1>
+
+            <p class="hero-sub">Premier out-of-home advertising across 6 cities in Pakistan — billboards, pole signs, digital faces and fabrication for brands that need to be seen on the street.</p>
+
+            <div class="hero-actions">
+                <a href="#locations" class="btn btn-primary btn-lg">Explore locations</a>
+                <a href="#contact" class="btn btn-ghost btn-lg">Talk to us</a>
+            </div>
+
+            <ul class="hero-facts">
+                <li><b>146+</b><span>Ad faces</span></li>
+                <li><b>6</b><span>Cities</span></li>
+                <li><b>20+</b><span>Prime locations</span></li>
+            </ul>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-shot hero-shot--a" data-parallax="0.06">
+                <img src="images/hyd-autobhan-rooftop.jpg" alt="Billboard on a rooftop at AutoBhan Road, Hyderabad">
+            </div>
+            <div class="hero-shot hero-shot--b" data-parallax="-0.04">
+                <img src="images/hyd-chandni-chowk.jpg" alt="Billboard at Chandni Chowk, Hyderabad">
+            </div>
+            <div class="hero-shot hero-shot--c" data-parallax="0.1">
+                <img src="images/sukkur-gymkhana.jpg" alt="Billboard at Gymkhana Chowk, Sukkur">
+            </div>
+            <div class="hero-chip">
+                <span class="pulse"></span>
+                <b>Live inventory</b>
+                <span>Updated by our team</span>
+            </div>
         </div>
     </div>
-    <div class="scroll-indicator">
-        <div class="scroll-line"></div>
-        <span>SCROLL</span>
+
+    <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 900 600" preserveAspectRatio="none" focusable="false">
+            <path class="wave-back" d="M0 434L21.5 446.7C43 459.3 86 484.7 128.8 495.5C171.7 506.3 214.3 502.7 257.2 498.2C300 493.7 343 488.3 385.8 474.2C428.7 460 471.3 437 514.2 439.2C557 441.3 600 468.7 642.8 469.8C685.7 471 728.3 446 771.2 429.7C814 413.3 857 405.7 878.5 401.8L900 398L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z"/>
+            <path class="wave-front" d="M0 434L21.5 446.7C43 459.3 86 484.7 128.8 495.5C171.7 506.3 214.3 502.7 257.2 498.2C300 493.7 343 488.3 385.8 474.2C428.7 460 471.3 437 514.2 439.2C557 441.3 600 468.7 642.8 469.8C685.7 471 728.3 446 771.2 429.7C814 413.3 857 405.7 878.5 401.8L900 398L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z"/>
+        </svg>
     </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker-bar">
-    <div class="ticker-track">
-        <span>HYDERABAD</span><span class="ticker-dot">&#9679;</span>
-        <span>SUKKUR</span><span class="ticker-dot">&#9679;</span>
-        <span>MIRPURKHAS</span><span class="ticker-dot">&#9679;</span>
-        <span>LARKANA</span><span class="ticker-dot">&#9679;</span>
-        <span>NAWABSHAH</span><span class="ticker-dot">&#9679;</span>
-        <span>SHIKARPUR</span><span class="ticker-dot">&#9679;</span>
-        <span>146+ FACES</span><span class="ticker-dot">&#9679;</span>
-        <span>BILLBOARDS</span><span class="ticker-dot">&#9679;</span>
-        <span>POLE SIGNS</span><span class="ticker-dot">&#9679;</span>
-        <span>STATIC &amp; DIGITAL</span><span class="ticker-dot">&#9679;</span>
-        <span>HYDERABAD</span><span class="ticker-dot">&#9679;</span>
-        <span>SUKKUR</span><span class="ticker-dot">&#9679;</span>
-        <span>MIRPURKHAS</span><span class="ticker-dot">&#9679;</span>
-        <span>LARKANA</span><span class="ticker-dot">&#9679;</span>
-        <span>NAWABSHAH</span><span class="ticker-dot">&#9679;</span>
-        <span>SHIKARPUR</span><span class="ticker-dot">&#9679;</span>
-        <span>146+ FACES</span><span class="ticker-dot">&#9679;</span>
-        <span>BILLBOARDS</span><span class="ticker-dot">&#9679;</span>
-        <span>POLE SIGNS</span><span class="ticker-dot">&#9679;</span>
-        <span>STATIC &amp; DIGITAL</span><span class="ticker-dot">&#9679;</span>
+<!-- ============ TICKER ============ -->
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+        <div class="ticker-group">
+            <span>Hyderabad</span><i></i><span>Sukkur</span><i></i><span>Mirpurkhas</span><i></i><span>Larkana</span><i></i><span>Nawabshah</span><i></i><span>Shikarpur</span><i></i>
+            <span>146+ faces</span><i></i><span>Billboards</span><i></i><span>Pole signs</span><i></i><span>Static &amp; digital</span><i></i>
+        </div>
+        <div class="ticker-group">
+            <span>Hyderabad</span><i></i><span>Sukkur</span><i></i><span>Mirpurkhas</span><i></i><span>Larkana</span><i></i><span>Nawabshah</span><i></i><span>Shikarpur</span><i></i>
+            <span>146+ faces</span><i></i><span>Billboards</span><i></i><span>Pole signs</span><i></i><span>Static &amp; digital</span><i></i>
+        </div>
     </div>
 </div>
 
-<!-- STATS -->
+<!-- ============ STATS ============ -->
 <section class="stats-section" id="stats">
     <div class="container">
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" data-target="146">0</div>
-                <div class="stat-suffix">+</div>
-                <div class="stat-label">Ad Faces</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="6">0</div>
-                <div class="stat-suffix"></div>
-                <div class="stat-label">Cities Covered</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="20">0</div>
-                <div class="stat-suffix">+</div>
-                <div class="stat-label">Prime Locations</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="50">0</div>
-                <div class="stat-suffix">+</div>
-                <div class="stat-label">Brand Clients</div>
-            </div>
+            <article class="stat-card reveal">
+                <div class="stat-value"><span class="stat-number" data-target="146">146</span><span class="stat-suffix">+</span></div>
+                <div class="stat-label">Ad faces</div>
+                <p class="stat-note">Billboards, pole signs and digital faces in our network.</p>
+            </article>
+            <article class="stat-card reveal">
+                <div class="stat-value"><span class="stat-number" data-target="6">6</span><span class="stat-suffix"></span></div>
+                <div class="stat-label">Cities covered</div>
+                <p class="stat-note">Across Sindh — from Hyderabad to Shikarpur.</p>
+            </article>
+            <article class="stat-card reveal">
+                <div class="stat-value"><span class="stat-number" data-target="20">20</span><span class="stat-suffix">+</span></div>
+                <div class="stat-label">Prime locations</div>
+                <p class="stat-note">High-traffic corridors and city-centre junctions.</p>
+            </article>
+            <article class="stat-card reveal">
+                <div class="stat-value"><span class="stat-number" data-target="50">50</span><span class="stat-suffix">+</span></div>
+                <div class="stat-label">Brand clients</div>
+                <p class="stat-note">National and international brands on our sites.</p>
+            </article>
         </div>
     </div>
 </section>
 
-<!-- CITIES -->
-<section class="cities-section" id="cities">
+<!-- ============ CITIES ============ -->
+<section class="section cities-section" id="cities">
     <div class="container">
-        <h2 class="section-title">OUR <span class="text-glow">CITIES</span></h2>
-        <p class="section-sub">Dominating outdoor advertising across 6 major cities in Pakistan</p>
+        <header class="section-head reveal">
+            <span class="eyebrow">Coverage</span>
+            <h2 class="section-title">Our <em>cities</em></h2>
+            <p class="section-sub">Dominating outdoor advertising across 6 major cities in Pakistan</p>
+        </header>
+
         <div class="cities-grid">
-            <div class="city-card" data-city="hyderabad">
+            <article class="city-card city-card--feature reveal" data-city="hyderabad">
                 <div class="city-img-wrap">
                     <img src="images/hyd-autobhan-road.jpg" alt="Hyderabad billboard" loading="lazy">
-                    <div class="city-overlay">
-                        <span class="city-count">10+ Sites</span>
-                    </div>
+                    <span class="city-count">10+ Sites</span>
                 </div>
-                <h3>Hyderabad</h3>
-                <p>The flagship market — Autobhan Road, Qasim Chowk, Court Road & more</p>
-            </div>
-            <div class="city-card" data-city="sukkur">
+                <div class="city-body">
+                    <h3>Hyderabad</h3>
+                    <p>The flagship market — Autobhan Road, Qasim Chowk, Court Road &amp; more</p>
+                    <button class="city-link" type="button" data-goto-city="hyderabad">View sites in Hyderabad<span aria-hidden="true">&#8594;</span></button>
+                </div>
+            </article>
+
+            <article class="city-card reveal" data-city="sukkur">
                 <div class="city-img-wrap">
                     <img src="images/sukkur-dolphin.jpg" alt="Sukkur billboard" loading="lazy">
-                    <div class="city-overlay">
-                        <span class="city-count">4+ Sites</span>
-                    </div>
+                    <span class="city-count">4+ Sites</span>
                 </div>
-                <h3>Sukkur</h3>
-                <p>Dolphin Chowk, Gymkhana, Minara Road — high-impact corridors</p>
-            </div>
-            <div class="city-card" data-city="mirpurkhas">
+                <div class="city-body">
+                    <h3>Sukkur</h3>
+                    <p>Dolphin Chowk, Gymkhana, Minara Road — high-impact corridors</p>
+                    <button class="city-link" type="button" data-goto-city="sukkur">View sites in Sukkur<span aria-hidden="true">&#8594;</span></button>
+                </div>
+            </article>
+
+            <article class="city-card reveal" data-city="mirpurkhas">
                 <div class="city-img-wrap">
                     <img src="images/mirpurkhas-4minar.jpg" alt="Mirpurkhas billboard" loading="lazy">
-                    <div class="city-overlay">
-                        <span class="city-count">2+ Sites</span>
-                    </div>
+                    <span class="city-count">2+ Sites</span>
                 </div>
-                <h3>Mirpurkhas</h3>
-                <p>4 Minar Chowk, Baldia Chowk — strategic city-center placements</p>
-            </div>
-            <div class="city-card" data-city="larkana">
+                <div class="city-body">
+                    <h3>Mirpurkhas</h3>
+                    <p>4 Minar Chowk, Baldia Chowk — strategic city-center placements</p>
+                    <button class="city-link" type="button" data-goto-city="mirpurkhas">View sites in Mirpurkhas<span aria-hidden="true">&#8594;</span></button>
+                </div>
+            </article>
+
+            <article class="city-card reveal" data-city="larkana">
                 <div class="city-img-wrap">
                     <img src="images/larkana-vip.jpg" alt="Larkana billboard" loading="lazy">
-                    <div class="city-overlay">
-                        <span class="city-count">1+ Sites</span>
-                    </div>
+                    <span class="city-count">1+ Sites</span>
                 </div>
-                <h3>Larkana</h3>
-                <p>VIP Flyover, Chandka Hospital — premium traffic exposure</p>
-            </div>
-            <div class="city-card" data-city="nawabshah">
+                <div class="city-body">
+                    <h3>Larkana</h3>
+                    <p>VIP Flyover, Chandka Hospital — premium traffic exposure</p>
+                    <button class="city-link" type="button" data-goto-city="larkana">View sites in Larkana<span aria-hidden="true">&#8594;</span></button>
+                </div>
+            </article>
+
+            <article class="city-card reveal" data-city="nawabshah">
                 <div class="city-img-wrap">
                     <img src="images/nawabshah-bridge.jpg" alt="Nawabshah billboard" loading="lazy">
-                    <div class="city-overlay">
-                        <span class="city-count">1+ Sites</span>
-                    </div>
+                    <span class="city-count">1+ Sites</span>
                 </div>
-                <h3>Nawabshah</h3>
-                <p>Nawabshah Bridge — connecting Shahpur Chakar to Baldia Chowk</p>
-            </div>
-            <div class="city-card" data-city="shikarpur">
+                <div class="city-body">
+                    <h3>Nawabshah</h3>
+                    <p>Nawabshah Bridge — connecting Shahpur Chakar to Baldia Chowk</p>
+                    <button class="city-link" type="button" data-goto-city="nawabshah">View sites in Nawabshah<span aria-hidden="true">&#8594;</span></button>
+                </div>
+            </article>
+
+            <article class="city-card reveal" data-city="shikarpur">
                 <div class="city-img-wrap">
                     <img src="images/shikarpur.jpg" alt="Shikarpur billboard" loading="lazy">
-                    <div class="city-overlay">
-                        <span class="city-count">1+ Sites</span>
-                    </div>
+                    <span class="city-count">1+ Sites</span>
                 </div>
-                <h3>Shikarpur</h3>
-                <p>Historic city — expanding OOH footprint in northern Pakistan</p>
-            </div>
+                <div class="city-body">
+                    <h3>Shikarpur</h3>
+                    <p>Historic city — expanding OOH footprint in northern Pakistan</p>
+                    <button class="city-link" type="button" data-goto-city="shikarpur">View sites in Shikarpur<span aria-hidden="true">&#8594;</span></button>
+                </div>
+            </article>
         </div>
     </div>
 </section>
 
-<!-- LOCATIONS -->
-<section class="locations-section" id="locations">
+<!-- ============ LOCATIONS ============ -->
+<section class="section locations-section" id="locations">
     <div class="container">
-        <h2 class="section-title">FEATURED <span class="text-glow">LOCATIONS</span></h2>
-        <p class="section-sub">Premium billboard sites available for your next campaign</p>
+        <header class="section-head reveal">
+            <span class="eyebrow">Inventory</span>
+            <h2 class="section-title">Featured <em>locations</em></h2>
+            <p class="section-sub">Premium billboard sites available for your next campaign</p>
+        </header>
 
-        <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">All Cities</button>
-            <button class="filter-btn" data-filter="hyderabad">Hyderabad</button>
-            <button class="filter-btn" data-filter="sukkur">Sukkur</button>
-            <button class="filter-btn" data-filter="mirpurkhas">Mirpurkhas</button>
-            <button class="filter-btn" data-filter="larkana">Larkana</button>
-            <button class="filter-btn" data-filter="nawabshah">Nawabshah</button>
-            <button class="filter-btn" data-filter="shikarpur">Shikarpur</button>
+        <div class="filter-wrap reveal">
+            <div class="filter-bar" id="filterBar" role="group" aria-label="Filter locations by city">
+                <button class="filter-btn is-active" data-filter="all" type="button">All cities</button>
+                <button class="filter-btn" data-filter="hyderabad" type="button">Hyderabad</button>
+                <button class="filter-btn" data-filter="sukkur" type="button">Sukkur</button>
+                <button class="filter-btn" data-filter="mirpurkhas" type="button">Mirpurkhas</button>
+                <button class="filter-btn" data-filter="larkana" type="button">Larkana</button>
+                <button class="filter-btn" data-filter="nawabshah" type="button">Nawabshah</button>
+                <button class="filter-btn" data-filter="shikarpur" type="button">Shikarpur</button>
+            </div>
+            <p class="filter-count" id="filterCount" aria-live="polite"></p>
         </div>
 
         <div class="locations-grid" id="locationsGrid">
-            <!-- Locations inserted by JS -->
+            <!-- Locations inserted by script.js -->
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
-    <div class="container">
-        <div class="about-content">
-            <h2 class="section-title">ABOUT <span class="text-glow">US</span></h2>
+<!-- ============ ABOUT ============ -->
+<section class="section about-section" id="about">
+    <div class="container about-grid">
+        <div class="about-copy reveal">
+            <span class="eyebrow">Who we are</span>
+            <h2 class="section-title">About <em>us</em></h2>
             <div class="about-text-blocks">
                 <p>Gravity Media Services is a comprehensive out-of-home advertising agency. We provide end-to-end OOH services including <strong>billboards, pole signs, vehicle wraps, streamers, bus stop advertising, street furniture</strong>, and outdoor promotional activities.</p>
                 <p>We also offer top-quality <strong>fabrication &amp; manufacturing</strong> for billboards, hoarding structures, 3D signboards, retail store kiosks, and street furniture. With our expertise and premium materials, we help your business make a lasting impression in the crowded advertising landscape.</p>
             </div>
-            <div class="services-list">
-                <span>Billboards</span>
-                <span>Pole Signs</span>
-                <span>Vehicle Wraps</span>
-                <span>Streamers</span>
-                <span>Bus Stop Ads</span>
-                <span>3D Signboards</span>
-                <span>Street Furniture</span>
-                <span>Retail Kiosks</span>
-            </div>
+            <a href="#contact" class="btn btn-primary">Start your campaign</a>
         </div>
-    </div>
-</section>
 
-<!-- CLIENTS -->
-<section class="clients-section" id="clients">
-    <div class="container">
-        <h2 class="section-title">OUR VALUABLE <span class="text-glow">CLIENTS</span></h2>
-        <p class="section-sub">Trusted by leading brands across Pakistan</p>
-    </div>
-    <div class="client-ticker">
-        <div class="client-ticker-track">
-            <div class="client-ticker-item"><img src="images/client-unilever.png" alt="Unilever"></div>
-            <div class="client-ticker-item"><img src="images/client-jazz.png" alt="Jazz"></div>
-            <div class="client-ticker-item"><img src="images/client-zong.svg" alt="Zong"></div>
-            <div class="client-ticker-item"><img src="images/client-daraz.png" alt="Daraz"></div>
-            <div class="client-ticker-item"><img src="images/client-foodpanda.png" alt="Foodpanda"></div>
-            <div class="client-ticker-item"><img src="images/client-mcdonalds.png" alt="McDonald's"></div>
-            <div class="client-ticker-item"><img src="images/client-jazzcash.png" alt="JazzCash"></div>
-            <div class="client-ticker-item"><img src="images/client-ufone.png" alt="Ufone"></div>
-            <div class="client-ticker-item"><img src="images/client-gul_ahmed.png" alt="Gul Ahmed"></div>
-            <div class="client-ticker-item"><img src="images/client-nishat_linen.png" alt="Nishat Linen"></div>
-            <div class="client-ticker-item"><img src="images/client-interwood.png" alt="Interwood"></div>
-            <div class="client-ticker-item"><img src="images/client-servis_tyres.png" alt="Servis Tyres"></div>
-            <div class="client-ticker-item"><img src="images/client-golden_pearl.png" alt="Golden Pearl"></div>
-            <div class="client-ticker-item"><img src="images/client-naheed.png" alt="Naheed Builders"></div>
-            <div class="client-ticker-item"><img src="images/client-moltyfoam.png" alt="MoltyFoam"></div>
-            <div class="client-ticker-item"><img src="images/client-shaffer.png" alt="Shaffer"></div>
-            <div class="client-ticker-item"><img src="images/client-meclay_london.png" alt="Meclay London"></div>
-            <div class="client-ticker-item"><img src="images/client-kala_kola.png" alt="Kala Kola"></div>
-            <div class="client-ticker-item"><img src="images/client-pak_interiors.png" alt="Pakistan Interiors"></div>
-            <div class="client-ticker-item"><img src="images/client-ecs.png" alt="ECS"></div>
-            <div class="client-ticker-item"><img src="images/client-power_plus.png" alt="Power Plus"></div>
-            <div class="client-ticker-item"><img src="images/client-ziewnic.png" alt="Ziewnic Solar"></div>
-            <div class="client-ticker-item"><img src="images/client-candyland.png" alt="CandyLand"></div>
-            <div class="client-ticker-item"><img src="images/client-rios.png" alt="RIOS"></div>
-            <!-- Duplicate for seamless loop -->
-            <div class="client-ticker-item"><img src="images/client-unilever.png" alt="Unilever"></div>
-            <div class="client-ticker-item"><img src="images/client-jazz.png" alt="Jazz"></div>
-            <div class="client-ticker-item"><img src="images/client-zong.svg" alt="Zong"></div>
-            <div class="client-ticker-item"><img src="images/client-daraz.png" alt="Daraz"></div>
-            <div class="client-ticker-item"><img src="images/client-foodpanda.png" alt="Foodpanda"></div>
-            <div class="client-ticker-item"><img src="images/client-mcdonalds.png" alt="McDonald's"></div>
-            <div class="client-ticker-item"><img src="images/client-jazzcash.png" alt="JazzCash"></div>
-            <div class="client-ticker-item"><img src="images/client-ufone.png" alt="Ufone"></div>
-            <div class="client-ticker-item"><img src="images/client-gul_ahmed.png" alt="Gul Ahmed"></div>
-            <div class="client-ticker-item"><img src="images/client-nishat_linen.png" alt="Nishat Linen"></div>
-            <div class="client-ticker-item"><img src="images/client-interwood.png" alt="Interwood"></div>
-            <div class="client-ticker-item"><img src="images/client-servis_tyres.png" alt="Servis Tyres"></div>
-            <div class="client-ticker-item"><img src="images/client-golden_pearl.png" alt="Golden Pearl"></div>
-            <div class="client-ticker-item"><img src="images/client-naheed.png" alt="Naheed Builders"></div>
-            <div class="client-ticker-item"><img src="images/client-moltyfoam.png" alt="MoltyFoam"></div>
-            <div class="client-ticker-item"><img src="images/client-shaffer.png" alt="Shaffer"></div>
-            <div class="client-ticker-item"><img src="images/client-meclay_london.png" alt="Meclay London"></div>
-            <div class="client-ticker-item"><img src="images/client-kala_kola.png" alt="Kala Kola"></div>
-            <div class="client-ticker-item"><img src="images/client-pak_interiors.png" alt="Pakistan Interiors"></div>
-            <div class="client-ticker-item"><img src="images/client-ecs.png" alt="ECS"></div>
-            <div class="client-ticker-item"><img src="images/client-power_plus.png" alt="Power Plus"></div>
-            <div class="client-ticker-item"><img src="images/client-ziewnic.png" alt="Ziewnic Solar"></div>
-            <div class="client-ticker-item"><img src="images/client-candyland.png" alt="CandyLand"></div>
-            <div class="client-ticker-item"><img src="images/client-rios.png" alt="RIOS"></div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-    <div class="container">
-        <h2 class="section-title">START YOUR <span class="text-glow">CAMPAIGN</span></h2>
-        <p class="section-sub">Reach out directly — we'll help you find the perfect sites for your brand</p>
-        <div class="contact-card">
-            <div class="contact-person">
-                <div class="contact-avatar">MS</div>
+        <aside class="about-panel reveal">
+            <h3 class="panel-title">What we do</h3>
+            <ul class="services">
+                <li>Billboards</li>
+                <li>Pole Signs</li>
+                <li>Vehicle Wraps</li>
+                <li>Streamers</li>
+                <li>Bus Stop Ads</li>
+                <li>3D Signboards</li>
+                <li>Street Furniture</li>
+                <li>Retail Kiosks</li>
+            </ul>
+            <div class="panel-note">
+                <span class="panel-note-icon" aria-hidden="true">&#9874;</span>
                 <div>
-                    <h3>M. Saad Shaikh</h3>
-                    <p class="contact-role">Manager Marketing</p>
+                    <b>Fabrication &amp; manufacturing</b>
+                    <p>Billboard and hoarding structures, 3D signboards, retail store kiosks and street furniture — produced with premium materials.</p>
                 </div>
             </div>
-            <a href="tel:03473207332" class="contact-row">
-                <span class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                </span>
-                <span class="contact-label">0347-3207332</span>
-            </a>
-            <a href="tel:03194728489" class="contact-row">
-                <span class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                </span>
-                <span class="contact-label">0319-4728489</span>
-            </a>
-            <a href="mailto:info@gravitymedia.pk" class="contact-row">
-                <span class="contact-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </span>
-                <span class="contact-label">info@gravitymedia.pk</span>
-            </a>
+        </aside>
+    </div>
+</section>
+
+<!-- ============ CLIENTS ============ -->
+<section class="section clients-section" id="clients">
+    <div class="container">
+        <header class="section-head reveal">
+            <span class="eyebrow">Trusted by</span>
+            <h2 class="section-title">Our valuable <em>clients</em></h2>
+            <p class="section-sub">Trusted by leading brands across Pakistan</p>
+        </header>
+    </div>
+
+    <div class="client-ticker reveal">
+        <div class="client-track">
+            <div class="client-group">
+                <div class="client-item"><img src="images/client-unilever.png" alt="Unilever" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-jazz.png" alt="Jazz" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-zong.svg" alt="Zong" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-daraz.png" alt="Daraz" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-mcdonalds.png" alt="McDonald's" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-jazzcash.png" alt="JazzCash" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-ufone.png" alt="Ufone" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-gul_ahmed.png" alt="Gul Ahmed" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-nishat_linen.png" alt="Nishat Linen" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-interwood.png" alt="Interwood" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-servis_tyres.png" alt="Servis Tyres" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-golden_pearl.png" alt="Golden Pearl" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-naheed.png" alt="Naheed Builders" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-moltyfoam.png" alt="MoltyFoam" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-shaffer.png" alt="Shaffer" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-meclay_london.png" alt="Meclay London" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-kala_kola.png" alt="Kala Kola" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-pak_interiors.png" alt="Pakistan Interiors" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-ecs.png" alt="ECS" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-power_plus.png" alt="Power Plus" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-ziewnic.png" alt="Ziewnic Solar" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-candyland.png" alt="CandyLand" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-rios.png" alt="RIOS" loading="lazy"></div>
+            </div>
+            <div class="client-group" aria-hidden="true">
+                <div class="client-item"><img src="images/client-unilever.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-jazz.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-zong.svg" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-daraz.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-mcdonalds.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-jazzcash.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-ufone.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-gul_ahmed.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-nishat_linen.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-interwood.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-servis_tyres.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-golden_pearl.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-naheed.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-moltyfoam.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-shaffer.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-meclay_london.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-kala_kola.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-pak_interiors.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-ecs.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-power_plus.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-ziewnic.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-candyland.png" alt="" loading="lazy"></div>
+                <div class="client-item"><img src="images/client-rios.png" alt="" loading="lazy"></div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============ CONTACT ============ -->
+<section class="section contact-section" id="contact">
+    <div class="container">
+        <header class="section-head reveal">
+            <span class="eyebrow">Next step</span>
+            <h2 class="section-title">Start your <em>campaign</em></h2>
+            <p class="section-sub">Reach out directly — we&rsquo;ll help you find the perfect sites for your brand</p>
+        </header>
+
+        <div class="contact-grid">
+            <div class="contact-card reveal">
+                <div class="contact-person">
+                    <div class="contact-avatar" aria-hidden="true">MS</div>
+                    <div>
+                        <h3>M. Saad Shaikh</h3>
+                        <p class="contact-role">Manager Marketing</p>
+                    </div>
+                </div>
+
+                <div class="contact-rows">
+                    <a href="tel:03473207332" class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </span>
+                        <span class="contact-meta"><small>Mobile</small><b>0347-3207332</b></span>
+                    </a>
+                    <a href="tel:03194728489" class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </span>
+                        <span class="contact-meta"><small>Office</small><b>0319-4728489</b></span>
+                    </a>
+                    <a href="mailto:info@gravitymedia.pk" class="contact-row">
+                        <span class="contact-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </span>
+                        <span class="contact-meta"><small>Email</small><b>info@gravitymedia.pk</b></span>
+                    </a>
+                </div>
+            </div>
+
+            <aside class="contact-cta reveal">
+                <h3>Let&rsquo;s put your brand on the street</h3>
+                <p>Share the cities and campaign dates you have in mind — our marketing manager will take it from there.</p>
+                <div class="contact-cta-actions">
+                    <a href="tel:03473207332" class="btn btn-primary btn-lg">Call now</a>
+                    <a href="mailto:info@gravitymedia.pk" class="btn btn-ghost-dark btn-lg">Email us</a>
+                </div>
+                <ul class="contact-cta-list">
+                    <li>Site list with sizes &amp; monthly rates</li>
+                    <li>Static and digital faces</li>
+                    <li>Fabrication &amp; production support</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
@@ -332,33 +423,39 @@
                 <p class="footer-tagline">Spreading Ideas Through Screens</p>
                 <p class="footer-desc">Premier out-of-home advertising agency covering 6 cities across Pakistan.</p>
             </div>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Footer">
                 <h4>Quick Links</h4>
                 <a href="#cities">Cities</a>
                 <a href="#locations">Locations</a>
                 <a href="#about">About Us</a>
                 <a href="#clients">Clients</a>
                 <a href="#contact">Contact</a>
-            </div>
+            </nav>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Gravity Media Services. All rights reserved.</p>
+            <a href="#hero" class="footer-top">Back to top<span aria-hidden="true">&#8593;</span></a>
         </div>
     </div>
 </footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">&#8593;</button>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Billboard photo viewer">
     <div class="lightbox-overlay"></div>
     <div class="lightbox-content">
-        <button class="lightbox-close">&times;</button>
-        <button class="lightbox-prev">&#10094;</button>
-        <button class="lightbox-next">&#10095;</button>
+        <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
+        <button class="lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>
